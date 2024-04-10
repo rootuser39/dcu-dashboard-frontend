@@ -83,7 +83,7 @@ nav {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #11ff00; /* Black*/
+    background-color: #00334f; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 70px; /* Place content 70px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -99,25 +99,35 @@ nav a {
     font-size: 25px;
     color: white;
     display: block;
-    background-color: #11ff00;
+    background-color: #00334f;
     border-radius: 5px; /* rounds off buttons */
-    border: 2px solid white; /*red border around each button */
+    border: 2px solid #ffc900; /*red border around each button */
     transition: 0.3s;
   }
   
   /* When you mouse over the navigation links, change their color */
 nav a:hover {
     color: white;
-    transform: scale(1.1); /* tab enlargees when hovered */
+    transform: scale(1.05); /* tab enlargees when hovered */
     background-color: #dedede; /* tab turns grey when hovered*/
   }
+
   
   /* Position and style the close button */
 nav .closebtn {
-    position:absolute;
+    /* position:absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 36px; */
+    width: 100%;
+    max-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 16px;
+    right: 0;
   }
 
 
