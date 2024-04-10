@@ -59,19 +59,34 @@ function showRoomDetails(room) {
         document.body.appendChild(popup);
     }
 
-    // Populate the popup with room details
+    // Calculate colors based on values
+    const noiseColor = calculateColor(room.noise_level, 140);
+    const airColor = calculateColor(room.air_quality, 500); // Assuming 100 is the max for good air quality index
+
+    // Populate the popup with room details, visual bars, and actual values
     popup.innerHTML = `
         <h3>${room.name}</h3>
-        <p><b>Capacity:</b>  ${room.capacity}</p>
-        <p><b>Air: </b> Quality: ${room.air_quality}</p>
-        <p><b>Noise: </b> Level: ${room.noise_level}</p>
-        <p><b>Building:</b>  ${room.building}</p>
+        <p><b>Capacity:</b> ${room.capacity}</p>
+        <p><b>Air Quality:</b> ${room.air_quality} <div class="value-bar-container"><div class="value-bar" style="width: ${room.air_quality/5}% ; background-color: ${airColor};"></div></div>0 to 500</p>
+        <p><b>Noise Level:</b> ${room.noise_level} dB <div class="value-bar-container"><div class="value-bar" style="width: ${(room.noise_level / 140) * 100}% ; background-color: ${noiseColor};"></div></div>0 to 140 dB</p>
+        <p><b>Building:</b> ${room.building}</p>
         <button onclick="closePopup()">Close</button>
     `;
 
     // Show the popup
     popup.style.display = 'block';
 }
+
+
+function calculateColor(value, max) {
+    const greenToRed = value / max;
+    const red = Math.floor(greenToRed * 255);
+    const green = Math.floor((1 - greenToRed) * 255);
+    return `rgb(${red}, ${green}, 0)`;
+}
+
+
+
 
 function closePopup() {
     const popup = document.querySelector('.room-popup');

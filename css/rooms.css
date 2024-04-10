@@ -8,10 +8,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 300px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: none;
     z-index: 1000; /* Ensure it's above other content */
 }
@@ -24,6 +26,20 @@
     margin: 12px 0;
 }
 
+.room-popup button {
+    background-color: #00334f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.room-popup button:hover {
+    background-color: white;
+    color: black;
+}
+
 .room-item {
     cursor: pointer;
     margin-bottom: 8px;
@@ -33,4 +49,24 @@
 .room-item:hover {
     color: #707070;
     /* Add more styles here to make the room items look better */
+}
+
+.building-section ul{
+    list-style: none; /* Removes the default list bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.value-bar-container {
+    display: inline-block;
+    width: 50%; /* Or adjust based on your design preference */
+    vertical-align: middle; /* Align the bars in the middle vertically if next to text */
+    margin-left: 10px; /* Space between the value and the bar */
+}
+
+.value-bar {
+    height: 20px; /* Set the height of the bars */
+    border: 1px solid #ccc; /* Optional: adds a border */
 }

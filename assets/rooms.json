@@ -3,40 +3,40 @@
         "id": 1,
         "name": "GLA.S143",
         "capacity": 120,
-        "air_quality":123.2,
-        "noise_level":600.1,
+        "air_quality":23.2,
+        "noise_level":60.1,
         "building":"Stokes"
     },
     {
         "id": 2,
         "name": "GLA.S144",
         "capacity": 90,
-        "air_quality":111.2,
-        "noise_level":308.1,
+        "air_quality":31.2,
+        "noise_level":38.1,
         "building":"Stokes"
     },
     {
         "id": 2,
         "name": "GLA.S144",
         "capacity": 90,
-        "air_quality":111.2,
-        "noise_level":308.1,
+        "air_quality":11.2,
+        "noise_level":39.1,
         "building":"Nursing"
     },
     {
         "id": 2,
         "name": "GLA.S144",
         "capacity": 90,
-        "air_quality":111.2,
-        "noise_level":308.1,
+        "air_quality":11.2,
+        "noise_level":30.1,
         "building":"Henry Grattan"
     },
     {
         "id": 2,
         "name": "GLA.S144",
         "capacity": 90,
-        "air_quality":111.2,
-        "noise_level":308.1,
+        "air_quality":81.2,
+        "noise_level":30.1,
         "building":"Stokes"
     },
     {
@@ -44,7 +44,7 @@
         "name": "GLA.HG08",
         "capacity": 104,
         "air_quality":100.2,
-        "noise_level":922.2,
+        "noise_level":72.2,
         "building":"Nursing"
     }
 ]
