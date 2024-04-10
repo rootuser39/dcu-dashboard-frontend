@@ -1,0 +1,57 @@
+.logincontainer {
+    max-width: 800px;
+    margin: 112px auto;
+    padding: 10px 100px;
+    text-align: left;
+    background-color: white; /* Dark grey background for the container section */
+    border-radius: 5px;
+    border: 2px solid white; /* white borders on buttons */
+}
+
+/*second header class*/
+h2 {
+    text-align: center; /*center the heading horizontally */
+}
+
+.input-group {
+    margin-bottom: 15px; /* Add margin between input groups */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px; /* Add margin below the label */
+    color: white; /* white labels */
+}
+
+.input-group input {
+    width: 100%; /* Set input width to fill its container */
+    padding: 8px; /* Add padding for better appearance */
+    border: 3px solid #333; /* Add border around input */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    background-color: white; /* Set input background color */
+    color: #333; /* Set input text color */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.input-group button {
+    padding: 10px 20px; /* Add padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    background-color: #444; /* Set button background color */
+    color: white; /* Set button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.input-group button:hover {
+    background-color: #333; /* Darken button background color on hover */
+}
+
+.input-group a {
+    color: white; /* Set link text color */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.input-group a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}

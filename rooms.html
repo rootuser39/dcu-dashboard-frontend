@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rooms.css">
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <div class="menu-toggle" onclick="openNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+           </div>
+        </div>
+        <a class="header-title" href="index.html">Data Dashboard</a>
+        <a class="login" href="login.html">Login</a> 
+    </header>
+
+    <nav>
+        <ul>
+            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book a Room</a></li>
+            <li><a href="rooms.html">Full room list</a></li>
+            <li><a href="admin.html">Add a Room</a></li>
+            <li><a href="settings.html">User Settings</a></li>
+        </ul>
+    </nav>
+    
+    <div class="user-info-bar">
+        <div class="user-info-content">Logged in as :<div class="user-info-name">John</div></div>
+        <div class="user-info-content">Role :<div class="user-info-role">Admin</div></div>
+    </div>
+    
+
+
+    
+    <main class="main-content">
+    <!-- Dynamically import Rooms information -->
+    </main>
+
+    <script src="rooms.js" defer></script>
+    <script src="scripts.js" defer></script>
+</body>
+</html>

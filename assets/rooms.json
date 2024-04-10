@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "GLA.S143",
+        "capacity": 120,
+        "air_quality":123.2,
+        "noise_level":600.1,
+        "building":"Stokes"
+    },
+    {
+        "id": 2,
+        "name": "GLA.S144",
+        "capacity": 90,
+        "air_quality":111.2,
+        "noise_level":308.1,
+        "building":"Stokes"
+    },
+    {
+        "id": 3,
+        "name": "GLA.HG08",
+        "capacity": 104,
+        "air_quality":100.2,
+        "noise_level":922.2,
+        "building":"Nursing"
+    }
+]

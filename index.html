@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <div class="menu-toggle" onclick="openNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+           </div>
+        </div>
+        <a class="header-title" href="index.html">Data Dashboard</a>
+        <a class="login" href="login.html">Login</a> 
+    </header>
+
+    <nav>
+        <ul>
+            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book a Room</a></li>
+            <li><a href="rooms.html">Full room list</a></li>
+            <li><a href="admin.html">Add a Room</a></li>
+            <li><a href="settings.html">User Settings</a></li>
+        </ul>
+    </nav>
+    
+    <div class="user-info-bar">
+        <div class="user-info-content">Logged in as :<div class="user-info-name">John</div></div>
+        <div class="user-info-content">Role :<div class="user-info-role">Admin</div></div>
+    </div>
+
+    <main class="main-content">
+        <section id="roomAvailability">
+            <h2>Room Availability Snapshot</h2>
+            <div class="rooms-container">
+                <div class="rooms-available">
+                    <p class="rooms-available-title">Available Rooms:</p>
+                    <ul class="rooms-available-rooms">
+                        <li class="room">S143</li>
+                        <li class="room">S144</li>
+                        <li class="room">S145</li>
+                        <li class="room">S146</li>
+                        <li class="room">S147</li>
+                    </ul>
+                </div>
+                <div class="rooms-occupied">
+                    <p class="rooms-occupied-title">Occupied Rooms:</p>
+                    <ul class="rooms-occupied-rooms">
+                        <li class="room">S243</li>
+                    </ul>
+            </div>
+        </section>
+
+
+        <section id="websiteActivity">
+            <h2>Website Activity</h2>
+            <div class="activity-container">
+                *INSERT ROOMS CHART HERE*
+            </div>
+        </section>
+    </main>
+</body>
+</html>
