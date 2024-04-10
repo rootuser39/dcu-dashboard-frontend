@@ -171,3 +171,27 @@ section {
     margin: 40px 40px;
 }
 
+.rooms-available-rooms, .rooms-occupied-rooms {
+    list-style:none;
+}
+
+
+
+.upperContainer {
+    display: flex;
+    justify-content: space-around; /* You might want to change this to 'space-between' to add space around items */
+    width: 100%;
+    margin-bottom: 20px; /* Adds margin at the bottom of the container */
+}
+
+#roomAvailability {
+    flex: 2; /* 20% width */
+    margin-right: 10px; /* Adds margin to the right */
+}
+
+#websiteActivity {
+    flex: 8; /* 80% width */
+    margin-left: 10px; /* Adds margin to the left */
+}
+
+

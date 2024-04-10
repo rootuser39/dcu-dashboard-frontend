@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -37,11 +38,14 @@
     </div>
 
     <main class="main-content">
+        <div class="upperContainer">
+
+        
         <section id="roomAvailability">
             <h2>Room Availability Snapshot</h2>
             <div class="rooms-container">
                 <div class="rooms-available">
-                    <p class="rooms-available-title">Available Rooms:</p>
+                    <b class="rooms-available-title">Available Rooms:</b>
                     <ul class="rooms-available-rooms">
                         <li class="room">S143</li>
                         <li class="room">S144</li>
@@ -51,7 +55,7 @@
                     </ul>
                 </div>
                 <div class="rooms-occupied">
-                    <p class="rooms-occupied-title">Occupied Rooms:</p>
+                    <b class="rooms-occupied-title">Occupied Rooms:</b>
                     <ul class="rooms-occupied-rooms">
                         <li class="room">S243</li>
                     </ul>
@@ -60,11 +64,97 @@
 
 
         <section id="websiteActivity">
-            <h2>Website Activity</h2>
+            <h2>Air Quality Measurements</h2>
             <div class="activity-container">
-                *INSERT ROOMS CHART HERE*
-            </div>
+                <canvas id="airQualityChart"></canvas>
+            </div>            
         </section>
+        </div>
+
+        <section id="noiseLevelTrends">
+            <h2>Noise Level Trends</h2>
+            <div class="activity-container">
+                <canvas id="noiseLevelChart"></canvas>
+            </div>            
+        </section>
+        
+
+
     </main>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('assets/rooms.json') // Ensure this URL is correct
+            .then(response => response.json())
+            .then(data => {
+                // Extract room names and data for air quality and noise levels
+                const roomNames = data.map(room => room.name);
+                const airQualityLevels = data.map(room => room.air_quality);
+                const noiseLevels = data.map(room => room.noise_level);
+    
+                // Context for the air quality chart
+                const ctxAirQuality = document.getElementById('airQualityChart').getContext('2d');
+                // Initialize air quality chart
+                const airQualityChart = new Chart(ctxAirQuality, {
+                    type: 'bar',
+                    data: {
+                        labels: roomNames,
+                        datasets: [{
+                            label: 'Air Quality',
+                            data: airQualityLevels,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Air Quality Index'
+                                }
+                            }
+                        }
+                    }
+                });
+    
+                // Context for the noise level chart
+                const ctxNoiseLevel = document.getElementById('noiseLevelChart').getContext('2d');
+                // Initialize noise level chart
+                const noiseLevelChart = new Chart(ctxNoiseLevel, {
+                    type: 'line',
+                    data: {
+                        labels: roomNames,
+                        datasets: [{
+                            label: 'Noise Level (dB)',
+                            data: noiseLevels,
+                            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Noise Level (dB)'
+                                }
+                            }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading rooms:', error);
+            });
+    });
+    </script>
+    
 </html>
