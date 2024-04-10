@@ -34,9 +34,25 @@ function loadRooms() {
             data.forEach(room => {
                 const li = document.createElement('li');
                 // Display more details about each room
-                li.textContent = `${room.name} - Capacity: ${room.capacity}, Air Quality: ${room.air_quality}, Building: ${room.building}`;
+                li.textContent = `${room.name} -  ${room.building}`;
                 li.classList.add('room-item');
                 li.setAttribute('data-room-id', room.id);
+
+                  // Create a BOOK button for each room
+                const bookButton = document.createElement('button');
+                bookButton.textContent = 'BOOK';
+                bookButton.classList.add('book-button');
+                // Optionally, set an attribute to identify the room easily when the button is clicked
+                bookButton.setAttribute('data-room-id', room.id);
+                // Attach an event listener to handle booking
+                bookButton.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevents the list item's click event
+                    bookRoom(room); // Pass the entire room object for booking
+                });
+  
+                  // Append the BOOK button to the list item
+                  li.appendChild(bookButton);
+
                 roomsList.appendChild(li);
             });
         })
