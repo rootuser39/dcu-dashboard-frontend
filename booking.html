@@ -60,6 +60,12 @@
             <form id="bookingForm">
                 <label for="bookingDate">Date:</label>
                 <input type="date" id="bookingDate" name="bookingDate" required>
+                <div id="timeSelectionContainer" style="display: none;">
+                    <label for="bookingTime">Time:</label>
+                    <select id="bookingTime" name="bookingTime">
+                        <!-- Time slots will be dynamically added -->
+                    </select>
+                </div>
                 <input type="hidden" id="bookingRoomId" name="bookingRoomId">
                 <button type="submit">Submit</button>
             </form>

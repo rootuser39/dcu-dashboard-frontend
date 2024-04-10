@@ -1,7 +1,29 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     loadRooms();
+    
+    // Listen for changes on the date input
+    document.getElementById('bookingDate').addEventListener('change', function() {
+        // Only proceed if a date has been selected
+        if (this.value) {
+            const timeContainer = document.getElementById('timeSelectionContainer');
+            const timeSelect = document.getElementById('bookingTime');
+            
+            // Clear previous options and add new time slots
+            timeSelect.innerHTML = '';
+            for (let hour = 8; hour <= 18; hour++) {
+                const option = document.createElement('option');
+                option.value = `${hour}:00`;
+                option.textContent = `${hour}:00`;
+                timeSelect.appendChild(option);
+            }
+            
+            // Show the time selection container
+            timeContainer.style.display = 'block';
+        }
+    });
 });
+
 
 
 
