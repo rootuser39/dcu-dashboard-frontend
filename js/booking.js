@@ -33,25 +33,27 @@ function loadRooms() {
             roomsList.innerHTML = '';
             data.forEach(room => {
                 const li = document.createElement('li');
-                // Display more details about each room
-                li.textContent = `${room.name} -  ${room.building}`;
                 li.classList.add('room-item');
                 li.setAttribute('data-room-id', room.id);
 
-                  // Create a BOOK button for each room
+                // Create a div for room details to make alignment easier
+                const roomDetails = document.createElement('div');
+                roomDetails.textContent = `${room.name} -  ${room.building}`;
+                roomDetails.classList.add('room-details');
+
+                // Create a BOOK button for each room
                 const bookButton = document.createElement('button');
                 bookButton.textContent = 'BOOK';
                 bookButton.classList.add('book-button');
-                // Optionally, set an attribute to identify the room easily when the button is clicked
                 bookButton.setAttribute('data-room-id', room.id);
-                // Attach an event listener to handle booking
                 bookButton.addEventListener('click', function(event) {
                     event.stopPropagation(); // Prevents the list item's click event
                     bookRoom(room); // Pass the entire room object for booking
                 });
-  
-                  // Append the BOOK button to the list item
-                  li.appendChild(bookButton);
+
+                // Append the room details and BOOK button to the list item
+                li.appendChild(roomDetails);
+                li.appendChild(bookButton);
 
                 roomsList.appendChild(li);
             });
@@ -60,45 +62,25 @@ function loadRooms() {
 }
 
 
-//// Handle clicking on a room
-// function handleRoomClick(room) {
-//     console.log('Room clicked:', room);
-//     // Instead of getting room availability by room name,
-//     // we use the availability data directly from the room object.
-//     showAvailability(room.availability);
-// }
 
-// function showAvailability(availability) {
-//     var calendar = document.querySelector('#availabilityPopup .calendar');
-//     calendar.innerHTML = ''; // Clear any existing content
+function bookRoom(room) {
+    // Populate form data (e.g., room ID)
+    document.getElementById('bookingRoomId').value = room.id;
 
-//     // Iterate over the availability data
-//     availability.forEach(function(day) {
-//         var dayElement = document.createElement('div');
-//         dayElement.classList.add('day');
-//         // Add 'available' or 'unavailable' class based on the day's availability
-//         dayElement.classList.add(day.available ? 'available' : 'unavailable');
-//         // Optionally, you could also display the date on each dayElement
-//         dayElement.textContent = day.date; // Display the date
-//         calendar.appendChild(dayElement);
-//     });
+    // Show the popup
+    document.getElementById('bookingPopup').style.display = 'block';
+}
 
-//     // Show the popup
-//     document.getElementById('availabilityPopup').style.display = 'block';
-// }
+function closePopup() {
+    document.getElementById('bookingPopup').style.display = 'none';
+}
 
-  
-//   function closePopup() {
-//     document.getElementById('availabilityPopup').style.display = 'none';
-//   }
-  
-//   function getRoomAvailability(roomName) {
-//     // This function would actually retrieve data from your server or data structure
-//     // For the purposes of this example, we'll just return a static array of days
-//     return [
-//       { date: '2024-04-01', available: true },
-//       { date: '2024-04-02', available: false },
-//       // ... more days
-//     ];
-//   }
 
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+    const roomId = document.getElementById('bookingRoomId').value;
+    const bookingDate = document.getElementById('bookingDate').value;
+    console.log(`Booking room ID ${roomId} for date ${bookingDate}`);
+    closePopup(); // Close the popup
+    // Here, you can add logic to actually book the room, such as sending data to a server.
+});
