@@ -3,30 +3,33 @@
     margin: 112px auto;
     padding: 10px 100px;
     text-align: left;
-    background-color: white; /* Dark grey background for the container section */
+    background-color: #00334f; /* Dark grey background for the container section */
     border-radius: 5px;
-    border: 2px solid white; /* white borders on buttons */
+    border: 2px solid #ffc900; /* white borders on buttons */
 }
 
-/*second header class*/
 h2 {
     text-align: center; /*center the heading horizontally */
+    color: #ffc900;
+    padding: 20px 0px 20px 0px;
 }
 
 .input-group {
-    margin-bottom: 15px; /* Add margin between input groups */
+    margin-bottom: 20px; /* Add margin between input groups */
+    align-items: center;
 }
 
-.input-group label {
+/* .input-group label {
     display: block;
-    margin-bottom: 5px; /* Add margin below the label */
-    color: white; /* white labels */
-}
+    margin-bottom: 5px; /* Add margin below the label 
+    color: #ffc900; /* white labels 
+} 
+*/
 
 .input-group input {
     width: 100%; /* Set input width to fill its container */
     padding: 8px; /* Add padding for better appearance */
-    border: 3px solid #333; /* Add border around input */
+    border: 3px solid black; /* Add border around input */
     border-radius: 5px; /* Add border-radius for rounded corners */
     background-color: white; /* Set input background color */
     color: #333; /* Set input text color */
@@ -37,10 +40,11 @@ h2 {
     padding: 10px 20px; /* Add padding for button */
     border: none; /* Remove border */
     border-radius: 5px; /* Add border-radius for rounded corners */
-    background-color: #444; /* Set button background color */
-    color: white; /* Set button text color */
+    background-color: #ffc900; /* Set button background color */
+    color: #00334f; /* Set button text color */
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: background-color 0.3s; /* Smooth transition for background color change */
+
 }
 
 .input-group button:hover {

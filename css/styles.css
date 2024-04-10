@@ -16,25 +16,25 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #11ff00;
+    background-color: #00334f;
     color: white;
     padding: 20px 20px;
 }
 
 .header-title {
     text-decoration: none;
-    color: white;
+    color: #ffc900;
     font-size: 26px;
 }
 
 .login {
     width: 100%;
     max-width: 80px;
-    color: white;
+    color: #ffc900;
     text-decoration: none; /* removes underline */
     padding: 5px 10px;
     text-align: center;
-    border: 2px solid white; /* adds red border to buttons */
+    border: 2px solid #ffc900;
     border-radius: 5px; /* rounds off buttons corners*/
 }
 
@@ -132,7 +132,7 @@ nav .closebtn {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #ffc900;
     margin: 5px 0;
     transition: transform 0.3s, opacity 0.3s;
 }
