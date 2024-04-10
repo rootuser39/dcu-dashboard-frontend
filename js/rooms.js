@@ -38,7 +38,9 @@ function renderRooms(groupedByBuilding) {
         const list = document.createElement('ul');
         rooms.forEach(room => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${room.name} - Capacity: ${room.capacity}, Air Quality: ${room.air_quality}`;
+            listItem.textContent = room.name; // Only display the room name
+            listItem.classList.add('room-item'); // Add class for styling and identification
+            listItem.addEventListener('click', () => showRoomDetails(room)); // Attach event listener
             list.appendChild(listItem);
         });
         section.appendChild(list);
@@ -47,6 +49,42 @@ function renderRooms(groupedByBuilding) {
         mainContent.appendChild(section);
     });
 }
+
+function showRoomDetails(room) {
+    // Create the popup element or use an existing one
+    let popup = document.querySelector('.room-popup');
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.className = 'room-popup';
+        document.body.appendChild(popup);
+    }
+
+    // Populate the popup with room details
+    popup.innerHTML = `
+        <h3>${room.name}</h3>
+        <p><b>Capacity:</b>  ${room.capacity}</p>
+        <p><b>Air: </b> Quality: ${room.air_quality}</p>
+        <p><b>Noise: </b> Level: ${room.noise_level}</p>
+        <p><b>Building:</b>  ${room.building}</p>
+        <button onclick="closePopup()">Close</button>
+    `;
+
+    // Show the popup
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.querySelector('.room-popup');
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     loadRooms();

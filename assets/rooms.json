@@ -16,6 +16,30 @@
         "building":"Stokes"
     },
     {
+        "id": 2,
+        "name": "GLA.S144",
+        "capacity": 90,
+        "air_quality":111.2,
+        "noise_level":308.1,
+        "building":"Nursing"
+    },
+    {
+        "id": 2,
+        "name": "GLA.S144",
+        "capacity": 90,
+        "air_quality":111.2,
+        "noise_level":308.1,
+        "building":"Henry Grattan"
+    },
+    {
+        "id": 2,
+        "name": "GLA.S144",
+        "capacity": 90,
+        "air_quality":111.2,
+        "noise_level":308.1,
+        "building":"Stokes"
+    },
+    {
         "id": 3,
         "name": "GLA.HG08",
         "capacity": 104,
