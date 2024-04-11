@@ -27,6 +27,11 @@ header {
     font-size: 26px;
 }
 
+.header-title img {
+    height: 50px; /* or your desired size */
+    width: auto; /* maintain aspect ratio */
+}
+
 .login {
     width: 100%;
     max-width: 80px;
