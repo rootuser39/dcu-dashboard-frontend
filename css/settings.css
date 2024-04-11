@@ -18,6 +18,7 @@ th, td {
     padding: 8px;
     text-align: left;
     width: 33.3333%;    /* Ensure each column has equal width */
+    font-weight: bold;
 }
 
 th {
@@ -31,18 +32,20 @@ input[type="text"] {
     margin-right: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    width: 60%; /* Adjust width as needed */
+    width: 50%; /* Adjust width as needed */
 }
 
 .update-button {
     padding: 5px 10px;
+    font-weight: bold;
     background-color: #ffc900; /* Updated button color */
     color: #00334f;
-    border: none;
+    border: 1px solid #ffc900;
     border-radius: 3px;
     cursor: pointer;
 }
 
 .update-button:hover {
-    background-color: #e6b800; /* Slightly darker color on hover */
+    background-color: #00334f; 
+    color: #ffc900;
 }

@@ -125,12 +125,13 @@ nav ul {
 
 /* The navigation menu links */
 nav a {
-    padding: 8px 8px 8px 8px;
+    padding: 8px 8px;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     text-decoration: none;
     font-size: 25px;
+    font-weight: bold;
     color: #00334f;
     display: block;
     background-color: #ffc900;
@@ -148,10 +149,9 @@ nav a:hover {
     background-color: #00334f; /* tab turns grey when hovered*/
   }
 
-  nav a i {
+nav a i {
     margin-right: 10px; /* Space between icon and text */
-    min-width: 20px; /* Ensure alignment if text wraps */
-    text-align: center; /* Center icons horizontally */
+    min-width: 30px; /* Ensure alignment if text wraps */
   }
   
   /* Position and style the close button */
