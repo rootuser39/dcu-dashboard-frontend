@@ -15,6 +15,7 @@
 
 .form-container h2 {
     margin-bottom: 24px;
+    color: #ffc900;
 }
 
 .form-group {
@@ -24,11 +25,12 @@
 .form-container button {
     background-color: #ffc900;
     padding: 4px;
-    border: none;
+    border: 1px solid #ffc900;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .form-container button:hover {
-    background-color: white;
+    background-color: #00334f;
+    color: #ffc900;
 }
