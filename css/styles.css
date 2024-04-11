@@ -50,24 +50,45 @@ header {
     background-color: #00334f; /* hovering buttons makes the background change to grey */
 }
 
+.user-info-container{
+    display: flex;
+}
 
 .user-info-bar {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
+    background-color: #ffc900;
+    border-left: 2px solid #00334f;
+    border-right: 1px solid #00334f;
+    border-bottom: 2px solid #00334f;
+}
+
+.user-info-bar-2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc900;
+    border-left: 1px solid #00334f;
+    border-right: 2px solid #00334f;
+    border-bottom: 2px solid #00334f;
 }
 
 .user-info-content {
     display: flex;
     padding: 8px;
+    justify-content: right;
+    color: #00334f;
+    font-weight: bold;
 }
 
-.user-info-name, .user-info-role {
-    padding-left: 4px
+.user-info-name, .user-info-role{
+    display: flex;
+    justify-content: left;
+    padding: 8px;
+    color: #00334f;
+    font-weight: bold;
 }
-
-
-
 .menu-container {
     width: 100%; /* Adjust the width of the menu container */
     max-width: 80px;
