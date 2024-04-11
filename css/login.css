@@ -19,17 +19,10 @@ h2 {
     align-items: center;
 }
 
-/* .input-group label {
-    display: block;
-    margin-bottom: 5px; /* Add margin below the label 
-    color: #ffc900; /* white labels 
-} 
-*/
-
 .input-group input {
     width: 100%; /* Set input width to fill its container */
     padding: 8px; /* Add padding for better appearance */
-    border: 3px solid black; /* Add border around input */
+    border: 3px solid #ffc900; /* Add border around input */
     border-radius: 5px; /* Add border-radius for rounded corners */
     background-color: white; /* Set input background color */
     color: #333; /* Set input text color */
@@ -38,8 +31,9 @@ h2 {
 
 .input-group button {
     padding: 10px 20px; /* Add padding for button */
-    border: none; /* Remove border */
+    font-weight: bold;
     border-radius: 5px; /* Add border-radius for rounded corners */
+    border-color: #ffc900;
     background-color: #ffc900; /* Set button background color */
     color: #00334f; /* Set button text color */
     cursor: pointer; /* Change cursor to pointer on hover */
@@ -48,7 +42,9 @@ h2 {
 }
 
 .input-group button:hover {
-    background-color: #333; /* Darken button background color on hover */
+    color: #ffc900;
+    border-color: #ffc900;
+    background-color: #00334f; /* Darken button background color on hover */
 }
 
 .input-group a {
