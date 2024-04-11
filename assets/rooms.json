@@ -40,6 +40,14 @@
         "building":"Stokes"
     },
     {
+        "id": 2,
+        "name": "GLA.S144",
+        "capacity": 90,
+        "air_quality":81.2,
+        "noise_level":30.1,
+        "building":"Lonsdale"
+    },
+    {
         "id": 3,
         "name": "GLA.HG08",
         "capacity": 104,
