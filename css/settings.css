@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #00334f; /* Updated table background color */
+    color: white; /* Make text color white for contrast */
+    table-layout: fixed; /* This will help to distribute width evenly */
+}
+
+table, th{
+    border: 1px solid #00334f; /* Updated border color */
+}
+
+table, td {
+    border: 1px solid #ffc900;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    width: 33.3333%;    /* Ensure each column has equal width */
+}
+
+th {
+    background-color: #ffc900; /* Updated header background color */
+    color: #00334f; /* Text color for header cells */
+    border-color: #00334f; /* Updated border color for header cells */
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 60%; /* Adjust width as needed */
+}
+
+.update-button {
+    padding: 5px 10px;
+    background-color: #ffc900; /* Updated button color */
+    color: #00334f;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.update-button:hover {
+    background-color: #e6b800; /* Slightly darker color on hover */
+}
