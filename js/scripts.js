@@ -1,13 +1,4 @@
-/* navigation sidebar menu */
-// function openNav() {
-//     document.querySelector('nav').style.width = '250px';
-//   }
-  
-  /* Set the width of the side navigation to 0 */
-  // function closeNav() {
-  //   document.querySelector('nav').style.width = '0';
-  // }
-  function openNav() {
+function openNav() {
     document.querySelector('nav').classList.add('open');
 }
 

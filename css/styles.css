@@ -90,6 +90,10 @@ nav {
     transition: transform 0.3s; /* Smooth transition for transform property */
 }
 
+nav ul {
+    list-style-type: none;
+}
+
 /* The navigation menu links */
 nav a {
     padding: 8px 8px 8px 8px;
@@ -98,21 +102,28 @@ nav a {
     margin-right: 10px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: #00334f;
     display: block;
-    background-color: #00334f;
+    background-color: #ffc900;
     border-radius: 5px; /* rounds off buttons */
     border: 2px solid #ffc900; /*red border around each button */
     transition: 0.3s;
+    display: flex; /* Align icons with text */
+    align-items: center; /* Center items vertically */
   }
   
   /* When you mouse over the navigation links, change their color */
 nav a:hover {
-    color: white;
+    color: #ffc900;
     transform: scale(1.05); /* tab enlargees when hovered */
-    background-color: #dedede; /* tab turns grey when hovered*/
+    background-color: #00334f; /* tab turns grey when hovered*/
   }
 
+  nav a i {
+    margin-right: 10px; /* Space between icon and text */
+    min-width: 20px; /* Ensure alignment if text wraps */
+    text-align: center; /* Center icons horizontally */
+  }
   
   /* Position and style the close button */
 nav .closebtn {
