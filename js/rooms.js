@@ -1,4 +1,4 @@
-// Fetch the rooms from the JSON file and populate the list
+// Fetch the rooms from the database and add to their respective list (info taken from JSON file for testing)
 function loadRooms() {
     fetch('assets/rooms.json')
         .then(response => response.json())
@@ -12,7 +12,7 @@ function loadRooms() {
 // Function to group rooms by their building
 function groupRoomsByBuilding(rooms) {
     return rooms.reduce((acc, room) => {
-        // If the building doesn't exist in the accumulator, add it
+        // If the building doesn't exist yet, add it
         if (!acc[room.building]) {
             acc[room.building] = [];
         }
@@ -38,9 +38,9 @@ function renderRooms(groupedByBuilding) {
         const list = document.createElement('ul');
         rooms.forEach(room => {
             const listItem = document.createElement('li');
-            listItem.textContent = room.name; // Only display the room name
+            listItem.textContent = room.name; // Display the room name
             listItem.classList.add('room-item'); // Add class for styling and identification
-            listItem.addEventListener('click', () => showRoomDetails(room)); // Attach event listener
+            listItem.addEventListener('click', () => showRoomDetails(room)); // Attach click event listener
             list.appendChild(listItem);
         });
         section.appendChild(list);
@@ -51,7 +51,7 @@ function renderRooms(groupedByBuilding) {
 }
 
 function showRoomDetails(room) {
-    // Create the popup element or use an existing one
+    // Create the popup element for room
     let popup = document.querySelector('.room-popup');
     if (!popup) {
         popup = document.createElement('div');
@@ -59,9 +59,9 @@ function showRoomDetails(room) {
         document.body.appendChild(popup);
     }
 
-    // Calculate colors based on values
-    const noiseColor = calculateColor(room.noise_level, 140);
-    const airColor = calculateColor(room.air_quality, 500); // Assuming 100 is the max for good air quality index
+    // Calculate bar colors based on values
+    const noiseColor = calculateColor(room.noise_level, 140); // 140dB is the max for good noise level index
+    const airColor = calculateColor(room.air_quality, 500); // 500 is the max for good air quality index
 
     // Populate the popup with room details, visual bars, and actual values
     popup.innerHTML = `
@@ -77,7 +77,7 @@ function showRoomDetails(room) {
     popup.style.display = 'block';
 }
 
-
+// Function to calculate bar colour from green to red
 function calculateColor(value, max) {
     const greenToRed = value / max;
     const red = Math.floor(greenToRed * 255);
@@ -94,11 +94,6 @@ function closePopup() {
         popup.style.display = 'none';
     }
 }
-
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function() {

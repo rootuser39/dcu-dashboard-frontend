@@ -1,10 +1,10 @@
 
 .main-content {
-    justify-content: space-evenly;
+    justify-content: space-evenly;  
 }
 
 .building-section {
-    border: 2px solid #ffc900; /* white borders on buttons */
+    border: 2px solid #ffc900; /* yellow borders on buttons */
     background-color: #00334f;
     color: white;
 }
@@ -25,7 +25,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: none;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000; /* Make sure it is above other content */
 }
 
 .room-popup h3 {
@@ -53,16 +53,14 @@
 .room-item {
     cursor: pointer;
     margin-bottom: 8px;
-    /* Add more styles here to make the room items look better */
 }
 
 .room-item:hover {
     color: #707070;
-    /* Add more styles here to make the room items look better */
 }
 
 .building-section ul{
-    list-style: none; /* Removes the default list bullet points */
+    list-style: none; /* Remove list bullet points */
     padding: 0;
     margin: 0;
 }
@@ -71,12 +69,12 @@
 
 .value-bar-container {
     display: inline-block;
-    width: 50%; /* Or adjust based on your design preference */
-    vertical-align: middle; /* Align the bars in the middle vertically if next to text */
-    margin-left: 10px; /* Space between the value and the bar */
+    width: 50%;
+    vertical-align: middle; /* Align the bars in the middle vertically */
+    margin-left: 10px;
 }
 
 .value-bar {
-    height: 20px; /* Set the height of the bars */
-    border: 1px solid #ccc; /* Optional: adds a border */
+    height: 20px;
+    border: 1px solid #ccc;
 }

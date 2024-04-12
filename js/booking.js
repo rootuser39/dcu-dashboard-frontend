@@ -2,9 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     loadRooms();
     
-    // Listen for changes on the date input
+    // Listen for changes in the date input
     document.getElementById('bookingDate').addEventListener('change', function() {
-        // Only proceed if a date has been selected
+        // If a date has been selected
         if (this.value) {
             const timeContainer = document.getElementById('timeSelectionContainer');
             const timeSelect = document.getElementById('bookingTime');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 timeSelect.appendChild(option);
             }
             
-            // Show the time selection container
+            // Show the time selection container after date is chosen
             timeContainer.style.display = 'block';
         }
     });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+// Function to fileter rooms in the list by name
 function filterRooms() {
     var input, filter, ul, li, i, txtValue;
     input = document.getElementById('searchBox');
@@ -45,9 +45,9 @@ function filterRooms() {
 }
 
 
-// Fetch the rooms from the JSON file and populate the list
+// Fetch the rooms from the backend and populate the list
 function loadRooms() {
-    fetch('assets/rooms.json') // Ensure the path to your JSON file is correct
+    fetch('assets/rooms.json') // path to JSON file for testing
         .then(response => response.json())
         .then(data => {
             const roomsList = document.getElementById('roomsList');
@@ -63,7 +63,7 @@ function loadRooms() {
                 roomDetails.textContent = `${room.name} -  ${room.building}`;
                 roomDetails.classList.add('room-details');
 
-                // Create a BOOK button for each room
+                // Create a "BOOK" button for each room
                 const bookButton = document.createElement('button');
                 bookButton.textContent = 'BOOK';
                 bookButton.classList.add('book-button');
@@ -80,13 +80,13 @@ function loadRooms() {
                 roomsList.appendChild(li);
             });
         })
-        .catch(error => console.error('Error loading rooms:', error));
+        .catch(error => console.error('Error loading rooms:', error)); /* Error Handling */
 }
 
 
 
 function bookRoom(room) {
-    // Populate form data (e.g., room ID)
+    // Populate form data
     document.getElementById('bookingRoomId').value = room.id;
 
     // Show the popup
@@ -104,5 +104,6 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     const bookingDate = document.getElementById('bookingDate').value;
     console.log(`Booking room ID ${roomId} for date ${bookingDate}`);
     closePopup(); // Close the popup
-    // Here, you can add logic to actually book the room, such as sending data to a server.
+
+    // Need to add logic to communicate with backend to check availability and book the room
 });
