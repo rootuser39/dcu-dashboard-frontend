@@ -94,7 +94,8 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('assets/rooms.json') // Ensure this URL is correct
+        // fetch('api/rooms') // Change to this endpoint for database
+        fetch('assets/rooms.json')
             .then(response => response.json())
             .then(data => {
                 // Extract room names and data for air quality and noise levels
