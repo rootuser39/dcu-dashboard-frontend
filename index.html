@@ -57,17 +57,13 @@
                 <div class="rooms-available">
                     <b class="rooms-available-title">Available Rooms:</b>
                     <ul class="rooms-available-rooms">
-                        <li class="room">S143</li>
-                        <li class="room">S144</li>
-                        <li class="room">S145</li>
-                        <li class="room">S146</li>
-                        <li class="room">S147</li>
+                        <!-- Dynamically load info from backend -->
                     </ul>
                 </div>
                 <div class="rooms-occupied">
                     <b class="rooms-occupied-title">Occupied Rooms:</b>
                     <ul class="rooms-occupied-rooms">
-                        <li class="room">S243</li>
+                        <!-- Dynamically load info from backend -->
                     </ul>
             </div>
         </section>
@@ -94,8 +90,8 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // fetch('api/rooms') // Change to this endpoint for database
-        fetch('assets/rooms.json')
+        // fetch('assets/rooms.json')
+        fetch('/api/rooms') // Change to this endpoint for database
             .then(response => response.json())
             .then(data => {
                 // Extract room names and data for air quality and noise levels
@@ -165,6 +161,38 @@
             .catch(error => {
                 console.error('Error loading rooms:', error);
             });
+
+
+
+
+        fetch('/api/rooms_slots')
+            .then(response => response.json())
+            .then(data => {
+                const availableRoomsList = document.querySelector('.rooms-available-rooms');
+                const occupiedRoomsList = document.querySelector('.rooms-occupied-rooms');
+
+                // Clear any existing list items
+                availableRoomsList.innerHTML = '';
+                occupiedRoomsList.innerHTML = '';
+
+                data.forEach(room => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('room');
+                    listItem.textContent = room.name;
+
+                    // Assuming `active` is a boolean, false means available, true means occupied
+                    if (room.active)
+                    {
+                        occupiedRoomsList.appendChild(listItem);
+                    } else {
+                        availableRoomsList.appendChild(listItem);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading room slots:', error);
+            });
+
     });
     </script>
     

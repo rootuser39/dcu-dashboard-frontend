@@ -1,7 +1,7 @@
 // Fetch the rooms from the database and add to their respective list (info taken from JSON file for testing)
 function loadRooms() {
-    // fetch('api/rooms') /* API Call to the backend */
-    fetch('assets/rooms.json')
+    // fetch('assets/rooms.json')
+    fetch('/api/rooms') /* API Call to the backend */
         .then(response => response.json())
         .then(data => {
             const groupedByBuilding = groupRoomsByBuilding(data);

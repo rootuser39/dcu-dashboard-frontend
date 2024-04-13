@@ -47,8 +47,8 @@ function filterRooms() {
 
 // Fetch the rooms from the backend and populate the list
 function loadRooms() {
-    // fetch('api/rooms') // path to database endpoint
-    fetch('assets/rooms.json') // path to JSON file for testing
+    // fetch('assets/rooms.json') // path to JSON file for testing
+    fetch('/api/rooms') // path to database endpoint
         .then(response => response.json())
         .then(data => {
             const roomsList = document.getElementById('roomsList');
