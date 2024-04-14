@@ -42,8 +42,8 @@
             <div class="user-info-content">Role </div>
         </div>
         <div class="user-info-bar-2">
-            <div class="user-info-name"> firstname* lastname*</div>
-            <div class="user-info-role"> role*</div>
+            <div class="user-info-name" id="userFullName"> </div>
+            <div class="user-info-role" id="userRole"> </div>
         </div>
     </div>
 
@@ -57,19 +57,29 @@
             <!-- Role -->
             <tr>
                 <td>Role:</td>
-                <td><input type="text" id="role_title" readonly></td>
+                <td id="role_title"></td>
                 <td>
                 </td>
             </tr>
-    
+             <!-- First Name -->
+             <tr>
+                  <td>First Name:</td>
+                  <td id="firstName"></td>
+                 <td>
+                        <form id="updateFirstName">
+                           <input type="text" name="firstName" placeholder="Change First Name">
+                          <input type="button" onclick="updateUserInformation('updateFirstName')" class="update-button" value="Update">
+                       </form>
+                  </td>
+             </tr>
             <!-- Last Name -->
             <tr>
                 <td>Last Name:</td>
-                <td><input type="text" id="lastName" readonly></td>
+                <td id="lastName"></td>
                 <td>
                     <form id="updateLastName">
                         <input type="text" name="lastName" placeholder="Change Last Name">
-                        <input type="button" onclick="updateLastName()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updateLastName')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
@@ -77,11 +87,11 @@
             <!-- Email -->
             <tr>
                 <td>Email:</td>
-                <td><input type="text" id="email" readonly></td>
+                <td id="email"></td>
                 <td>
                     <form id="updateEmail">
                         <input type="text" name="email" placeholder="Change Email">
-                        <input type="button" onclick="updateEmail()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updateEmail')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
@@ -89,56 +99,59 @@
             <!-- Password -->
             <tr>
                 <td>Password:</td>
-                <td><input type="password" id="password" readonly></td>
+                <td id="password"></td>
                 <td>
                     <form id="updatePassword">
                         <input type="password" name="password" placeholder="Change Password">
-                        <input type="button" onclick="updatePassword()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updatePassword')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
     
-            <!-- Street -->
+            <!-- Address Line 1: Street -->
             <tr>
                 <td>Address Line 1:</td>
-                <td><input type="text" id="street" readonly></td>
+                <td id="street"></td>
                 <td>
                     <form id="updateStreet">
                         <input type="text" name="street" placeholder="Change Street">
-                        <input type="button" onclick="updateStreet()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updateStreet')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
-            <!-- City -->
+    
+            <!-- Address Line 2: City -->
             <tr>
                 <td>Address Line 2:</td>
-                <td><input type="text" id="city" readonly></td>
+                <td id="city"></td>
                 <td>
                     <form id="updateCity">
                         <input type="text" name="city" placeholder="Change City">
-                        <input type="button" onclick="updateCity()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updateCity')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
-            <!-- Country -->
+    
+            <!-- Address Line 3: Country -->
             <tr>
                 <td>Address Line 3:</td>
-                <td><input type="text" id="country" readonly></td>
+                <td id="country"></td>
                 <td>
                     <form id="updateCountry">
                         <input type="text" name="country" placeholder="Change Country">
-                        <input type="button" onclick="updateCountry()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updateCountry')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>
+    
             <!-- Postal Code -->
             <tr>
                 <td>Postal Code:</td>
-                <td><input type="text" id="postal_code" readonly></td>
+                <td id="postal_code"></td>
                 <td>
                     <form id="updatePostalCode">
                         <input type="text" name="postal_code" placeholder="Change Postal Code">
-                        <input type="button" onclick="updatePostalCode()" class="update-button" value="Update">
+                        <input type="button" onclick="updateUserInformation('updatePostalCode')" class="update-button" value="Update">
                     </form>
                 </td>
             </tr>

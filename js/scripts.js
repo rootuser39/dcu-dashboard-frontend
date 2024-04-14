@@ -19,3 +19,21 @@ window.addEventListener('click', function(event) {
 document.querySelector('.menu-toggle').addEventListener('click', function(event) {
     event.stopPropagation();
 });
+
+//User info bar
+function updateUserInfo(user) {
+    document.getElementById('userFullName').textContent = user.firstName + ' ' + user.lastName;
+    document.getElementById('userRole').textContent = user.role;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if user is already logged in and update info
+    fetch('/api/users')
+    .then(response => response.json())
+    .then(data => {
+        if (data.user) {
+            updateUserInfo(data.user);
+        }
+    })
+    .catch(error => console.error('Error fetching user data:', error));
+});

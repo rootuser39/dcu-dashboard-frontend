@@ -43,15 +43,15 @@
             <div class="user-info-content">Role </div>
         </div>
         <div class="user-info-bar-2">
-            <div class="user-info-name"> firstname* lastname*</div>
-            <div class="user-info-role"> role*</div>
+            <div class="user-info-name" id="userFullName"> </div>
+            <div class="user-info-role" id="userRole"> </div>
         </div>
     </div>
 
     <main class="main-content">
         <div class="logincontainer">
             <h2>Login</h2>
-            <form action="#" method="post" onsubmit="return validateLoginForm()">
+            <form id="loginForm" onsubmit="return validateLoginForm()">
                 <div class="input-group">
                     <input type="text" name="username" placeholder="Username" required>
                 </div>
